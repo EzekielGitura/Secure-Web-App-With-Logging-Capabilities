@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Web Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-random123'; style-src 'self'; img-src 'self' data:;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="apple-touch-icon" sizes="180x180" href="/security/apple-touch-icon.png">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Secure Web Application</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section id="login">
+                <h2>Secure Login</h2>
+                <form id="loginForm" onsubmit="return false;">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <button type="submit" onclick="authenticateUser()">Login</button>
+                </form>
+            </section>
+
+            <section id="threat-dashboard" class="hidden">
+                <h2>Security Threat Dashboard</h2>
+                <div id="threat-log"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Secure Web Application</p>
+        </footer>
+    </div>
+
+    <script src="security.js"></script>
+    <script src="logger.js"></script>
+</body>
+</html>
